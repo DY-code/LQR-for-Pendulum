@@ -8,11 +8,12 @@
 $$
 v_p\cos\theta = \dot{\theta} l \cos\theta
 $$
+
 则小球相对于小车的水平加速度方向向左，大小为
 $$
 a_pc = \ddot{\theta}l\cos\theta - \dot{\theta}^2l\sin\theta
-
 $$
+
 因而对于系统整体应用牛顿第二定律，有
 $$
 (m_c + m_p)\ddot{x} - m_p(\ddot{\theta}l\cos\theta - \dot{\theta}^2l\sin\theta) = u
@@ -20,12 +21,13 @@ $$
 对小球的力矩进行分析。如前所述，将小车对小球的作用力近似等价为水平方向的向左的作用力$m_p\ddot{x}$，则该作用力对小球产生一个垂直摆杆向左的力矩$m_p\ddot{x}l\cos\theta$；小球自身的重力也会产生一个垂直摆杆向左的力矩$m_pgl\sin\theta$。根据转动定律$M = I\alpha$，其中$M$是合外力矩，$I$是转动惯量，$\alpha$是角加速度，则有
 $$
 m_p\ddot{x}l\cos\theta + m_pgl\sin\theta = m_pl^2\ddot{\theta}
-
 $$
+
 将方程写为矩阵形式，如下所示：
 $$
 H\ddot{q} + C\dot{q} + G = Bu
 $$
+
 其中$q = [x,\ \theta]^T$，且
 $$
 \begin{align*}
@@ -51,6 +53,7 @@ $$
     \end{bmatrix}
 \end{align*}
 $$
+
 将上述动力学方程在零点附近展开，设$\cos\theta \sim 1,\ \sin\theta \sim \theta$，得到线性化后的系数矩阵：
 $$
 \begin{align*}
@@ -76,10 +79,12 @@ $$
     \end{bmatrix}
 \end{align*}
 $$
+
 设系统状态变量为$x = [x,\ \theta,\ \dot{x},\ \dot{\theta}]^T$，则线性化后的系统状态空间方程为
 $$
 \dot{x} = A_cx + B_cu
 $$
+
 其中各个矩阵为
 $$
 \begin{align*}
@@ -99,6 +104,7 @@ $$
     \end{bmatrix}
 \end{align*}
 $$
+
 其中$H^{-1}_{lij}$表示矩阵$H^{-1}_{l}$的第i行第j列的元素，以此类推，矩阵$H^{-1}_{l}$可由如下计算公式得到：
 $$
 H^{-1}_{l} = \frac{1}{(m_c + m_p)m_pl^2 - m_p^2l^2}
